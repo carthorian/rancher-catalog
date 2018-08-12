@@ -3,9 +3,9 @@ pttattachment:
     image: pttmessenger/pttattachment
     restart: always
     volumes:
-      - ptt-data-attachment:/export
-      - /opt/PttAttachmentServer/.config:/root/.minio
-      - /opt/PttCerts/attachments/:/root/.minio/certs
+      - ${PTTATTACH_DATA_PATH}:/export
+      - ${PTTATTACH_CONFIG_PATH}:/root/.minio
+      - ${PTTATTACH_CERT_PATH}:/root/.minio/certs
     command: server /export 
     tty: true
     stdin_open: true

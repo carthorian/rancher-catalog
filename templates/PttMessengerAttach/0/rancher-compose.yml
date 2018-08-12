@@ -15,5 +15,11 @@
       type: "string"
       required: true
       default: "/opt/PttCerts/attachments"
+    - variable: PTTATTACH_DATA_PATH
+      description: "PttMessenger Attachment Data Directory Path"
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/attachment/storage"
 pttattachment:
   scale: 1

@@ -3,23 +3,29 @@
   version: "9.5"
   description: "PttMessenger AccountDB PostgreSQL"
   questions:
-    - variable: PTT_POSTGRES_USER
+    - variable: PTT_POSTGRES_ACC_USER
       description: "PttMessenger PostgreSQL Username for AccountDB"
       label: "Username"
       type: "string"
       required: true
       default: "zebra"
-    - variable: PTT_POSTGRES_PASSWORD
+    - variable: PTT_POSTGRES_ACC_PASSWORD
       description: "PttMessenger PostgreSQL Password for AccountDB "
       label: "Password"
       type: "string"
       required: true
       default: "zebra"
-    - variable: PTT_POSTGRES_DB
+    - variable: PTT_POSTGRES_ACC_DB
       description: "PttMessenger PostgreSQL Database Name for AccountDB "
       label: "DatabaseName"
       type: "string"
       required: true
       default: "accountdb"
+    - variable: PTT_POSTGRES_ACC_DATA
+      description: "PttMessenger PostgreSQL Database Data Directory for AccountDB "
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/account"
 accountpostgres:
   scale: 1

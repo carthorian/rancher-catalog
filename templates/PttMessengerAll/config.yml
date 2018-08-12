@@ -1,0 +1,7 @@
+name: PttMessengerCore
+description: PttMessenger PoC Versiyon. Bütün Modulleri Barindirir.
+version: 1.78
+maintainer: Mehmet KAPLAN
+license: "Ptt Teknoloji"
+projectURL: "https://pttteknoloji.com.tr"
+category: PttMessenger

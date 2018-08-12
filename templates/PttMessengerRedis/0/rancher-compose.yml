@@ -1,0 +1,13 @@
+.catalog:
+  name: "PttMessenger Redis Module"
+  version: "4.0.6"
+  description: "PttMessenger Redis Database"
+  questions:
+    - variable: PTT_REDIS_DATA
+      description: "Redis Data Directory Path"
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/redis"
+redis:
+  scale: 1

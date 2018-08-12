@@ -3,10 +3,10 @@ messagepostgres:
     image: pttmessenger/pttpostgres
     restart: always
     volumes:
-      - ptt-data-messagedata:/var/lib/postgresql/data
+      - ${PTT_POSTGRES_MSG_DATA}:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: ${PTT_POSTGRES_USER}
-      POSTGRES_PASSWORD: ${PTT_POSTGRES_PASSWORD}
-      POSTGRES_DB: ${PTT_POSTGRES_DB}
+      POSTGRES_USER: ${PTT_POSTGRES_MSG_USER}
+      POSTGRES_PASSWORD: ${PTT_POSTGRES_MSG_PASSWORD}
+      POSTGRES_DB: ${PTT_POSTGRES_MSG_DB}
     tty: true
     stdin_open: true

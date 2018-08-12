@@ -1,0 +1,8 @@
+redis:
+    container_name: redis
+    image: pttmessenger/pttredis
+    restart: always
+    volumes:
+      - ${PTT_REDIS_DATA}:/data
+    tty: true
+    stdin_open: true
