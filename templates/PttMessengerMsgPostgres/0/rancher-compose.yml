@@ -4,19 +4,22 @@
   description: "PttMessenger MessageDB PostgreSQL"
   questions:
     - variable: PTT_POSTGRES_USER
-      description: "PttMessenger MessageDB PostgreSQL Username"
+      description: "PttMessenger PostgreSQL Username for MessageDB"
       label: "zebra"
       type: "string"
       required: true
+      default: "zebra"
     - variable: PTT_POSTGRES_PASSWORD
-      description: "PttMessenger MessageDB PostgreSQL Password"
+      description: "PttMessenger PostgreSQL Password for MessageDB"
       label: "zebra"
       type: "string"
       required: true
+      default: "zebra"
     - variable: PTT_POSTGRES_DB
-      description: "PttMessenger MessageDB PostgreSQL Database Name"
-      label: "messagedb"
+      description: "PttMessenger PostgreSQL Database Name for  MessageDB"
+      label: "Database Name"
       type: "string"
       required: true
+      default: "messagedb"
 messagepostgres:
   scale: 1

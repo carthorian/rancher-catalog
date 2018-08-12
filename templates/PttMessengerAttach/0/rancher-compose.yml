@@ -5,13 +5,15 @@
   questions:
     - variable: PTTATTACH_CONFIG_PATH
       description: "PttMessenger Attachment Config Directory Path"
-      label: "/opt/PttAttachmentServer/.config"
+      label: "Config Directory Path"
       type: "string"
       required: true
+      default: "/opt/PttAttachmentServer/.config"
     - variable: PTTATTACH_CERT_PATH
       description: "PttMessenger Attachment Certificate Path"
-      label: "/opt/PttCerts/attachments"
+      label: "Certificate Path"
       type: "string"
       required: true
+      default: "/opt/PttCerts/attachments"
 pttattachment:
   scale: 1

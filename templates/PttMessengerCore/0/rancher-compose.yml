@@ -5,13 +5,15 @@
   questions:
     - variable: PTTMESSENGER_CONFIG_PATH
       description: "PttMessenger Config Directory Path"
-      label: "/opt/PttMessengerServer/config"
+      label: "Config Directory Path"
       type: "string"
       required: true
+      default: "/opt/PttMessengerServer/config"
     - variable: PTTMESSENGER_CERT_PATH
       description: "PttMessenger Certificate Path"
-      label: "/opt/PttCerts/messenger"
+      label: "Certificate Directory Path"
       type: "string"
       required: true
+      default: "/opt/PttCerts/messenger"
 ptt:
-  scale: 1
+  scale: 2
