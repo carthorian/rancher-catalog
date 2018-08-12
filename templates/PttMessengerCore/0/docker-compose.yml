@@ -10,5 +10,8 @@ ptt:
       - ${PTTMESSENGER_CERT_PATH}:/zebra/config/cert
       - ${PTTMESSENGER_CERT_PATH}/keystore:/keystore
       - ${PTTMESSENGER_CERT_PATH}/certificates.p12:/certificates.p12
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
     tty: true
     stdin_open: true

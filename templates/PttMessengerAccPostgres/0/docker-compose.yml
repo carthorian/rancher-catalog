@@ -8,6 +8,9 @@ accountpostgres:
       POSTGRES_USER: ${PTT_POSTGRES_ACC_USER}
       POSTGRES_PASSWORD: ${PTT_POSTGRES_ACC_PASSWORD}
       POSTGRES_DB: ${PTT_POSTGRES_ACC_DB}
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
     tty: true
     stdin_open: true
     ports:

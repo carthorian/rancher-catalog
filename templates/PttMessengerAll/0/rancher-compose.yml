@@ -70,12 +70,55 @@
       required: true
       default: "/ptt-data/message"
 
+PttCoreLB:
+    scale: 1
+    # All load balancer options are configured in this key
+    lb_config:
+      port_rules:
+      - source_port: 80
+        target_port: 8080
+        service: ptt
+      - source_port: 443
+        target_port: 443
+        service: ptt
+    health_check:
+      port: 8080
+      interval: 2000
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      response_timeout: 2000
+
 ptt:
   scale: 2
+  retain_ip: true
+  health_check:
+    port: 8080
+    request_line: GET /healthcheck HTTP/1.0
+    interval: 2000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000
+
 redis:
   scale: 1
 accountpostgres:
   scale: 1
+  health_check:
+    port: 5432
+    interval: 2000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000
+
 messagepostgres:
   scale: 1
+  health_check:
+    port: 5432
+    interval: 2000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000
   

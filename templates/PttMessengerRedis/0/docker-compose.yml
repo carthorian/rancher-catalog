@@ -4,6 +4,9 @@ redis:
     restart: always
     volumes:
       - ${PTT_REDIS_DATA}:/data
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
     tty: true
     stdin_open: true
     ports:
