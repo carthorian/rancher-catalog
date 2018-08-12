@@ -71,10 +71,10 @@
       default: "/ptt-data/message"
 
 pttlb:
-    scale: 1
-    # All load balancer options are configured in this key
-    lb_config:
-      port_rules:
+  scale: 1
+  # All load balancer options are configured in this key
+  lb_config:
+    port_rules:
       - source_port: 80
         target_port: 8080
         service: ptt
