@@ -1,6 +1,6 @@
 .catalog:
   name: "PttMessenger Core Module Without Log"
-  version: "1.78_nolog"
+  version: "1.79_nolog"
   description: "PttMessenger Core Module for single host Without Log Module"
   questions:
     - variable: PTTMESSENGER_CONFIG_PATH
@@ -72,7 +72,6 @@
 
 pttlb:
   scale: 1
-  # All load balancer options are configured in this key
   lb_config:
     port_rules:
       - source_port: 80
@@ -91,12 +90,13 @@ pttlb:
 ptt:
   scale: 2
   retain_ip: true
-    health_check:
-      port: 8080
-      interval: 2000
-      unhealthy_threshold: 3
-      healthy_threshold: 2
-      response_timeout: 2000
+  health_check:
+    port: 8080
+    interval: 2000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 2000
 
 redis:
   scale: 1
