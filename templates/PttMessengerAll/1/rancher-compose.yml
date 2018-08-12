@@ -91,14 +91,12 @@ pttlb:
 ptt:
   scale: 2
   retain_ip: true
-  health_check:
-    port: 8080
-    request_line: GET /v1/keepalive HTTP/1.0
-    interval: 2000
-    unhealthy_threshold: 3
-    strategy: recreate
-    healthy_threshold: 2
-    response_timeout: 2000
+    health_check:
+      port: 8080
+      interval: 2000
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      response_timeout: 2000
 
 redis:
   scale: 1
