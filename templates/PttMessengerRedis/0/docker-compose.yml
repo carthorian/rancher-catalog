@@ -6,3 +6,5 @@ redis:
       - ${PTT_REDIS_DATA}:/data
     tty: true
     stdin_open: true
+    ports:
+      - "6379:6379"

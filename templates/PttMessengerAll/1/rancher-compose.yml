@@ -1,0 +1,81 @@
+.catalog:
+  name: "PttMessenger Core Module Without Log"
+  version: "1.78_nolog"
+  description: "PttMessenger Core Module for single host Without Log Module"
+  questions:
+    - variable: PTTMESSENGER_CONFIG_PATH
+      description: "PttMessenger Config Directory Path"
+      label: "Config Directory Path"
+      type: "string"
+      required: true
+      default: "/opt/PttMessengerServer/config"
+    - variable: PTTMESSENGER_CERT_PATH
+      description: "PttMessenger Certificate Path"
+      label: "Certificate Directory Path"
+      type: "string"
+      required: true
+      default: "/opt/PttCerts/messenger"
+    - variable: PTT_REDIS_DATA
+      description: "Redis Data Directory Path"
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/redis"
+    - variable: PTT_POSTGRES_ACC_USER
+      description: "PttMessenger PostgreSQL Username for AccountDB"
+      label: "Username"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_ACC_PASSWORD
+      description: "PttMessenger PostgreSQL Password for AccountDB "
+      label: "Password"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_ACC_DB
+      description: "PttMessenger PostgreSQL Database Name for AccountDB "
+      label: "DatabaseName"
+      type: "string"
+      required: true
+      default: "accountdb"
+    - variable: PTT_POSTGRES_ACC_DATA
+      description: "PttMessenger PostgreSQL Database Data Directory for AccountDB "
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/account"
+    - variable: PTT_POSTGRES_MSG_USER
+      description: "PttMessenger PostgreSQL Username for MessageDB"
+      label: "zebra"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_MSG_PASSWORD
+      description: "PttMessenger PostgreSQL Password for MessageDB"
+      label: "zebra"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_MSG_DB
+      description: "PttMessenger PostgreSQL Database Name for MessageDB"
+      label: "Database Name"
+      type: "string"
+      required: true
+      default: "messagedb"
+    - variable: PTT_POSTGRES_MSG_DATA
+      description: "PttMessenger PostgreSQL Database Data Directory for MessageDB "
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/message"
+
+ptt:
+  scale: 2
+redis:
+  scale: 1
+accountpostgres:
+  scale: 1
+messagepostgres:
+  scale: 1
+  

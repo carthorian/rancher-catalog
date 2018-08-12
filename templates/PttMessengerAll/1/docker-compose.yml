@@ -7,9 +7,11 @@ ptt:
       - ${PTTMESSENGER_CONFIG_PATH}/pttmessenger.yml:/pttmessenger.yml
       - ${PTTMESSENGER_CONFIG_PATH}/pttmessenger.yml:/config/pttmessenger.yml
       - ${PTTMESSENGER_CONFIG_PATH}/pttmessenger.yml:/zebra/config/pttmessenger.yml
+      - ${PTTMESSENGER_CONFIG_PATH}/runner_nolog.sh:/zebra/runner.sh
       - ${PTTMESSENGER_CERT_PATH}:/zebra/config/cert
       - ${PTTMESSENGER_CERT_PATH}/keystore:/keystore
       - ${PTTMESSENGER_CERT_PATH}/certificates.p12:/certificates.p12
+      
     tty: true
     stdin_open: true
     

@@ -10,3 +10,5 @@ messagepostgres:
       POSTGRES_DB: ${PTT_POSTGRES_MSG_DB}
     tty: true
     stdin_open: true
+    ports:
+      - "5462:5432"

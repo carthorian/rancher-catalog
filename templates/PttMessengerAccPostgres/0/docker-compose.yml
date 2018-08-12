@@ -10,3 +10,6 @@ accountpostgres:
       POSTGRES_DB: ${PTT_POSTGRES_ACC_DB}
     tty: true
     stdin_open: true
+    ports:
+      - "5472:5432"
+      
