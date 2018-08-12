@@ -70,7 +70,7 @@
       required: true
       default: "/ptt-data/message"
 
-PttCoreLB:
+pttlb:
     scale: 1
     # All load balancer options are configured in this key
     lb_config:

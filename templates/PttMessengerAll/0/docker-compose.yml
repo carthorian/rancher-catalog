@@ -1,11 +1,11 @@
 version: '2'
 services:
-  PttCoreLB:
+  pttlb:
       container_name: pttlb
       ports:
         - 443
         - 80
-      image: rancher/lb-service-haproxy
+      image: rancher/lb-service-haproxy:latest
 
   ptt:
       container_name: ptt
@@ -22,7 +22,7 @@ services:
       labels:
         io.rancher.container.pull_image: always
         io.rancher.container.hostname_override: container_name
-        tty: true
+      tty: true
       stdin_open: true
       
   redis:
