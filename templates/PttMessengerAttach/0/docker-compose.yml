@@ -1,0 +1,11 @@
+pttattachment:
+    container_name: ptt_attachment
+    image: pttmessenger/pttattachment
+    restart: always
+    volumes:
+      - ptt-data-attachment:/export
+      - /opt/PttAttachmentServer/.config:/root/.minio
+      - /opt/PttCerts/attachments/:/root/.minio/certs
+    command: server /export 
+    tty: true
+    stdin_open: true

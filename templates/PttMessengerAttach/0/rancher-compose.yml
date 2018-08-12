@@ -1,0 +1,17 @@
+.catalog:
+  name: "PttMessenger Attachment Module"
+  version: "1.1"
+  description: "PttMessenger Attachment Module for single host"
+  questions:
+    - variable: PTTATTACH_CONFIG_PATH
+      description: "PttMessenger Attachment Config Directory Path"
+      label: "/opt/PttAttachmentServer/.config"
+      type: "string"
+      required: true
+    - variable: PTTATTACH_CERT_PATH
+      description: "PttMessenger Attachment Certificate Path"
+      label: "/opt/PttCerts/attachments"
+      type: "string"
+      required: true
+pttattachment:
+  scale: 1

@@ -1,0 +1,12 @@
+accountpostgres:
+    container_name: accountpostgres
+    image: pttmessenger/pttpostgres
+    restart: always
+    volumes:
+      - ptt-data-accountdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${PTT_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${PTT_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${PTT_POSTGRES_DB}
+    tty: true
+    stdin_open: true

@@ -1,0 +1,12 @@
+ptt:
+    container_name: ptt
+    image: pttmessenger/pttmessengerserver:10-mehmet
+    restart: always
+    volumes:
+      - /opt/PttMessengerServer/config:/config
+      - /opt/PttCerts/messenger:/config/cert
+      - /opt/PttMessengerServer/config/pttmessenger.yml:/pttmessenger.yml
+      - /opt/PttCerts/messenger/keystore:/keystore
+      - /opt/PttCerts/messenger/certificates.p12:/certificates.p12
+    tty: true
+    stdin_open: true

@@ -1,0 +1,17 @@
+.catalog:
+  name: "PttMessenger Core Module"
+  version: "1.78"
+  description: "PttMessenger Core Module for single host"
+  questions:
+    - variable: PTTMESSENGER_CONFIG_PATH
+      description: "PttMessenger Config Directory Path"
+      label: "/opt/PttMessengerServer/config"
+      type: "string"
+      required: true
+    - variable: PTTMESSENGER_CERT_PATH
+      description: "PttMessenger Certificate Path"
+      label: "/opt/PttCerts/messenger"
+      type: "string"
+      required: true
+ptt:
+  scale: 1
