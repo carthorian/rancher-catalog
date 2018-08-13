@@ -1,0 +1,31 @@
+.catalog:
+  name: "PttMessenger MessageDB PostgreSQL"
+  version: "9.5"
+  description: "PttMessenger MessageDB PostgreSQL"
+  questions:
+    - variable: PTT_POSTGRES_MSG_USER
+      description: "PttMessenger PostgreSQL Username for MessageDB"
+      label: "zebra"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_MSG_PASSWORD
+      description: "PttMessenger PostgreSQL Password for MessageDB"
+      label: "zebra"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PTT_POSTGRES_MSG_DB
+      description: "PttMessenger PostgreSQL Database Name for MessageDB"
+      label: "Database Name"
+      type: "string"
+      required: true
+      default: "messagedb"
+    - variable: PTT_POSTGRES_MSG_DATA
+      description: "PttMessenger PostgreSQL Database Data Directory for MessageDB "
+      label: "Data Directory Path"
+      type: "string"
+      required: true
+      default: "/ptt-data/message"
+messagepostgres:
+  scale: 1

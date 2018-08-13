@@ -1,0 +1,14 @@
+pttattachment:
+    container_name: ptt_attachment
+    image: pttmessenger/pttattachment
+    restart: always
+    volumes:
+      - ${PTTATTACH_DATA_PATH}:/export
+      - ${PTTATTACH_CONFIG_PATH}:/root/.minio
+      - ${PTTATTACH_CERT_PATH}:/root/.minio/certs
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    command: server /export 
+    tty: true
+    stdin_open: true

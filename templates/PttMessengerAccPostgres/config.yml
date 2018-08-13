@@ -1,0 +1,7 @@
+name: PttMessengerAccPostgres
+description: PttMessenger AccountDB PostgreSQL database.
+version: 9.5
+maintainer: Mehmet KAPLAN
+license: "Ptt Teknoloji"
+projectURL: "https://pttteknoloji.com.tr"
+category: PttMessenger
