@@ -1,7 +1,0 @@
-name: PttMessengerCore
-description: PttMessenger Redis Database.
-version: 4.0.6
-maintainer: Mehmet KAPLAN
-license: "Ptt Teknoloji"
-projectURL: "https://pttteknoloji.com.tr"
-category: PttMessenger
