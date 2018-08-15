@@ -1,0 +1,7 @@
+name: PttMessengerCentralLogging
+description: PttMessenger Kibana Log Server
+version: 1.0.0
+maintainer: Mehmet KAPLAN
+license: "Ptt Teknoloji"
+projectURL: "https://pttteknoloji.com.tr"
+category: PttMessenger

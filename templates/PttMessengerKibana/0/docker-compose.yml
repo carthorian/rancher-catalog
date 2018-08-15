@@ -1,0 +1,63 @@
+pttelastic:
+    container_name: ptt_elastic
+    image: elasticsearch
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    environment:
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ${PTT_ELASTIC_DATA}:/usr/share/elasticsearch/data
+    tty: true
+    stdin_open: true
+pttkibana:
+    image: kibana
+    container_name: ptt_kibana
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    ports:
+      - ${PTT_KIBANA_PORT}:5601
+    links:
+      - pttelastic:elasticsearch
+    depends_on:
+      - pttelastic
+    tty: true
+    stdin_open: true
+pttlogstash:
+    image: pttmessenger/logstash
+    container_name: ptt_logstash
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    links:
+      - pttelastic:elasticsearch
+    volumes:
+      - ${PTT_LOGSTASH_CONFIG}:/config-dir
+    command: logstash -f /config-dir/logstash.conf
+    depends_on:
+      - pttelastic
+    tty: true
+    stdin_open: true
+pttlog:
+    image: pttmessenger/ptt_logserver
+    container_name: ptt_log
+    restart: always
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    links:
+      - ptt_logstash:ptt_logstash
+    ports:
+      - ${PTT_LOG_PORT}:514
+    depends_on:
+      - pttlogstash
+    tty: true
+    stdin_open: true
