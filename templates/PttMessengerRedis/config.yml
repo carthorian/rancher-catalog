@@ -1,4 +1,4 @@
-name: PttMessengerCore
+name: PttMessengerRedis
 description: PttMessenger Redis Database.
 version: 4.0.6
 maintainer: Mehmet KAPLAN

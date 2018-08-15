@@ -1,4 +1,4 @@
-name: PttMessengerCore
+name: PttMessengerNginx
 description: PttMessenger Nginx Webserver
 version: 1.13
 maintainer: Mehmet KAPLAN
