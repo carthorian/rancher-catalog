@@ -1,7 +1,0 @@
-name: PttMessengerNginx
-description: PttMessenger Nginx Webserver
-version: 1.13
-maintainer: Mehmet KAPLAN
-license: "Ptt Teknoloji"
-projectURL: "https://pttteknoloji.com.tr"
-category: PttMessenger
