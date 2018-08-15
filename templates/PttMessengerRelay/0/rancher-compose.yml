@@ -1,0 +1,13 @@
+.catalog:
+  name: "PttMessenger Relay Server"
+  version: "1.0.0"
+  description: "PttMessenger Relay Server"
+  questions:
+    - variable: PTT_RELAY_PORT
+      description: "Relay Server Turn Port"
+      label: "Turn Server Port"
+      type: "int"
+      required: true
+      default: "9000"
+pttrelay:
+  scale: 1

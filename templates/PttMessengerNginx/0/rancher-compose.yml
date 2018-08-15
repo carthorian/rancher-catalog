@@ -1,0 +1,31 @@
+.catalog:
+  name: "PttMessenger Nginx Webserver"
+  version: "1.13"
+  description: "PttMessenger Nginx Webserver"
+  questions:
+    - variable: PTT_NGINX_LOG
+      description: "Nginx Log Path"
+      label: "Log Directory Path"
+      type: "string"
+      required: true
+      default: "/opt/PttNginx/logs"
+    - variable: PTT_NGINX_CERT
+      description: "Nginx Log Certificates Directory Path"
+      label: "Certificates Directory Path"
+      type: "string"
+      required: true
+      default: "/opt/PttCerts"
+    - variable: PTT_NGINX_CONF
+      description: "Nginx Config File"
+      label: "Nginx Config File Path"
+      type: "string"
+      required: true
+      default: "/opt/PttNginx/nginx.conf"
+    - variable: PTT_NGINX_SITES
+      description: "Nginx Virtual Website Config PAth"
+      label: "Virtual Websites Config Directory"
+      type: "string"
+      required: true
+      default: "/opt/PttNginx/sites-enabled"
+pttnginx:
+  scale: 1

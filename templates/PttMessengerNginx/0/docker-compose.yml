@@ -1,0 +1,16 @@
+pttnginx:
+    container_name: ptt_nginx
+    image: pttmessenger/ptt_nginx
+    restart: always
+    volumes:
+      - ${PTT_NGINX_LOG}:/var/log/nginx
+      - ${PTT_NGINX_CERT}:/etc/nginx/sitecerts:ro
+      - ${PTT_NGINX_CONF}:/etc/nginx/nginx.conf:ro
+      - ${PTT_NGINX_SITES}:/etc/nginx/sites-enabled
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    tty: true
+    stdin_open: true
+    ports:
+      - "443:443"

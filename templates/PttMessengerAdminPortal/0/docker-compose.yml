@@ -1,0 +1,11 @@
+pttadminportal:
+    container_name: redis
+    image: pttmessenger/pttadminportal
+    restart: always
+    environment:
+      - "JAVA_OPTS=-Dserver.port=${PRT_JAVA_PORT} -Dptt.mode=${PRT_ADMIN_MODE} -Dspring.datasource.url=jdbc:postgresql://${PRT_POSTGRE_DB} -Dspring.datasource.username=${PRT_DB_USER} -Dspring.datasource.password=${PRT_DB_PASS} -Dspring.datasource.driver-class-name=org.postgresql.Driver"
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.container.hostname_override: container_name
+    tty: true
+    stdin_open: true

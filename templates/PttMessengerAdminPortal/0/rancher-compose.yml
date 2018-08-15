@@ -1,0 +1,40 @@
+.catalog:
+  name: "PttMessenger Admin Portal"
+  version: "1.7"
+  description: "PttMessenger Admin Portal"
+  questions:
+    - variable: PRT_POSTGRE_DB
+      description: "Admin Portal PostgreSQL Connection Info { DB_HOST_NAME:DB_PORT/DB_NAME }"
+      label: "Account DB Info"
+      type: "string"
+      required: true
+      default: "account_postgres:5432/accountdb"
+    - variable: PRT_DB_USER
+      description: "Admin Portal PostgreSQL Database Username"
+      label: "PostgreSQL Database Username"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PRT_DB_PASS
+      description: "Admin Portal PostgreSQL Database Password"
+      label: "PostgreSQL Database Password"
+      type: "string"
+      required: true
+      default: "zebra"
+    - variable: PRT_ADMIN_MODE
+      description: "Admin Portal Admin Mode"
+      label: "Admin Mode"
+      type: "enum"
+      required: true
+      options:
+         - true
+         - false
+      default: "false"
+    - variable: PRT_JAVA_PORT
+      description: "Admin Portal Application Port"
+      label: "Application Port"
+      type: "int"
+      required: true
+      default: "8080"
+pttadminportal:
+  scale: 1
